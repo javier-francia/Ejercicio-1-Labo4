@@ -1,0 +1,19 @@
+<div *ngIf="!articuloParaMostrar">
+    <p>Seleccione un articulo</p>
+</div>
+
+
+<div *ngIf="articuloParaMostrar">
+    <h2>{{articuloParaMostrar.descripcion}}</h2>
+    
+    <div class="card" style="width:200px">
+        <img class="card-img-top" [src]="articuloParaMostrar.rutaDeFoto" [ngStyle]="{'width.px': 100}">
+        <div class="card-body">
+            <h4 class="card-title">ID: {{articuloParaMostrar.id}}</h4>
+            <p>Precio: ${{articuloParaMostrar.precio}}</p>
+            <p>Tipo: {{articuloParaMostrar.tipo}}</p>
+            <p>Vencimiento: {{articuloParaMostrar.fechaDeVencimiento | date: "dd/MM/yyyy"}}</p>
+            <a (click)="borrarArticulo(articuloParaMostrar)" class="btn btn-danger">Borrar</a>
+        </div>
+    </div>
+</div>

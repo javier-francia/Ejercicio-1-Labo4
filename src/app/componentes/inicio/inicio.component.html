@@ -1,0 +1,26 @@
+<div>
+  
+<div id="content" >
+
+  <article class="post clearfix">
+
+    <header>
+      <h1 class="post-title"><a href="#">Listado</a></h1>
+    </header>
+    <hr>
+    <div id="principal">
+        <app-grilla (articuloSeleccionado)="tomarArticuloParaDetalles($event)"></app-grilla>
+    </div>    
+  </article>
+</div>
+  
+  
+<aside id="sidebar">
+  <section class="widget clearfix">
+    <h3 class="widgettitle">Detalle</h3>
+      <div id="error">
+          <app-detalle [articuloParaMostrar]="articuloSeleccionado"></app-detalle>
+      </div>
+  </section>
+</aside>
+</div>

@@ -1,0 +1,25 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Descripción</th>
+        <th>Tipo</th>
+        <th>Fecha de vencimiento</th>
+        <th>Precio</th>
+        <th>Foto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of listadoArticulos">
+        <td>{{articulo.id}}</td>
+        <td>{{articulo.descripcion}}</td>
+        <td>{{articulo.tipo}}</td>
+        <td>{{articulo.fechaDeVencimiento | date: "dd/MM/yyyy"}}</td>
+        <td>${{articulo.precio}}</td>
+        <td><img [src]="articulo.rutaDeFoto" [ngStyle]="{'width.px': 100}"></td>
+        <td>
+          <button type="button" class="btn btn-danger btn-circle"   (click)="mostrarDetalles(articulo)"><i class="fa fa-check"></i></button>
+        </td>
+      </tr>
+    </tbody>
+</table>
