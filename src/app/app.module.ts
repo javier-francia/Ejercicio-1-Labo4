@@ -9,6 +9,7 @@ import { DetalleComponent } from './componentes/detalle/detalle.component';
 import { ArticulosService } from './servicios/articulos.service';
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -22,7 +23,8 @@ import { AngularFireModule } from "@angular/fire";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule
   ],
   providers: [ArticulosService],
   bootstrap: [AppComponent]
